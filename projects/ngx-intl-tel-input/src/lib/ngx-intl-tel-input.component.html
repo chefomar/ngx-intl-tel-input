@@ -1,11 +1,11 @@
 <div class="intl-tel-input allow-dropdown">
-  <div class="flag-container" dropdown [ngClass]="{'disabled': disabled}">
-    <div class="selected-flag dropdown-toggle" dropdownToggle>
+  <div class="flag-container" ngbDropdown [ngClass]="{'disabled': disabled}">
+    <div class="selected-flag dropdown-toggle" ngbDropdownToggle>
       <div class="iti-flag" [ngClass]="selectedCountry.flagClass"></div>
       <div class="iti-arrow"></div>
     </div>
-    <ul class="country-list dropdown-menu" *dropdownMenu>
-      <li class="country" *ngFor="let country of preferredCountriesInDropDown" (click)="onCountrySelect(country, focusable)">
+    <ul class="country-list dropdown-menu" ngbDropdownMenu>
+      <li ngbDropdownItem class="country" *ngFor="let country of preferredCountriesInDropDown" (click)="onCountrySelect(country, focusable)">
         <div class="flag-box">
           <div class="iti-flag" [ngClass]="country.flagClass"></div>
         </div>
@@ -13,7 +13,7 @@
         <span class="dial-code">+{{country.dialCode}}</span>
       </li>
       <li class="divider" *ngIf="preferredCountriesInDropDown?.length"></li>
-      <li class="country" *ngFor="let country of allCountries" (click)="onCountrySelect(country, focusable)">
+      <li ngbDropdownItem class="country" *ngFor="let country of allCountries" (click)="onCountrySelect(country, focusable)">
         <div class="flag-box">
           <div class="iti-flag" [ngClass]="country.flagClass"></div>
         </div>
